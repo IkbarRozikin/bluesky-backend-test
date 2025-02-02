@@ -61,13 +61,13 @@ Jalankan aplikasi dengan perintah berikut:
 1. **Run the Web Scraping to Collect Pokémon Data**  
     To start the process of collecting Pokémon data, run the following command:
     ```bash
-    python main.py
+    python scarping.py
     ```
 
 2. **Run the Application (API)**  
     To run the application and access the API, use the following command:
     ```bash
-    pyhton scarping.py
+    pyhton api.py
     ```
 3. **Test the API in Swagger**  
     After the application is running, you can access the API documentation using Swagger at the following URL:
