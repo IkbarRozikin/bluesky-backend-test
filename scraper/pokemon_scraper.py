@@ -17,7 +17,7 @@ class PokemonScraper:
             return None
         
     def scrape_pokemon_data(self):
-        url = f'{self.base_url}/pokemon?limit=10'
+        url = f'{self.base_url}/pokemon?limit=50'
         response = requests.get(url)
         
         if response.status_code != 200:
@@ -59,7 +59,7 @@ class PokemonScraper:
     def save_pokemon_data(self):
         pokemons = self.scrape_pokemon_data()
 
-        print(f"Data pokemon berhasil dikumpulkan: {len(pokemons)} pokemon.")
+        print(f"Pokémon data has been successfully collected: {len(pokemons)} pokemons.")
 
         if not pokemons:
             print("No Pokémon data to save.")
@@ -72,6 +72,7 @@ class PokemonScraper:
                 cursor.execute('''
                     INSERT INTO pokemon (id, name, types, height, weight, img_url, base_stats)
                     VALUES (%s, %s, %s, %s, %s, %s, %s)
+                    ON CONFLICT (id) DO NOTHING
                 ''', (
                     pokemon['id'],
                     pokemon['name'],

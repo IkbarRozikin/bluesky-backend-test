@@ -1,0 +1,52 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Access API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/": {
+        "get": {
+            "description": "Returns message showing app is up",
+            "produces": [
+            "application/json"
+            ],
+            "responses": {
+            "200": {
+                "description": "Successful operation"
+            }
+          }
+        }
+      },
+      "/api/pokemon": {
+        "get": {
+          "description": "Get all pokemon",
+          "produces": [
+            "application/json"
+          ],    
+          "responses": {
+            "200": {
+              "description": "User granted access"
+            },
+            "400": {
+              "description": "Invalid request data"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "AccessData": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "server": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+  

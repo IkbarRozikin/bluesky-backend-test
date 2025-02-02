@@ -10,9 +10,10 @@ def main():
 
     if conn:
         scraper.save_pokemon_data()
-        print("Data pokemon berhasil disimpan ke database.")
+        print("Pokémon data has been successfully saved to the database.")
     else:
-        print("Gagal terhubung ke database.")
+        print("Failed to connect to the database.")
+
 
 if __name__ == "__main__":
     main()
